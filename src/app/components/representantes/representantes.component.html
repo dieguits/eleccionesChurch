@@ -1,0 +1,61 @@
+<div class="container pt-5 mt-5">
+  <notifier-container></notifier-container>
+
+  <div class="form-group row">
+    <label class="col-md-3 col-form-label text-right"
+      >Correo Electronico:
+    </label>
+    <div class="col-md-6 text-left">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Correo Electronico"
+        id="mail"
+        name="mail"
+        [(ngModel)]="email"
+        (change)="emailChange()"
+      />
+      <!-- (focusout)="emailChange()"  -->
+    </div>
+    <div class="col-md-3">
+      <input
+        type="button"
+        class="btn btn-primary"
+        value="Votar"
+        [disabled]="canVote()"
+        (click)="letsVote()"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div *ngFor="let repre of represenList" class="col-md-4 pb-4">
+      <div class="card pb-5" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="../../../assets/{{ repre.picture }}"
+          alt="Representante"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ repre.firstname }} {{ repre.lastname }}</h5>
+          <p class="card-text">
+            {{ repre.descripcion }}
+          </p>
+        </div>
+        <div class="card-body text-center">
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              (change)="voteElect($event, repre.id)"
+              class="form-check-input"
+              id="{{ repre.id }}"
+              name="{{ repre.id }}"
+              [disabled]="canSelectVote() && canVote()"
+            />
+            <label class="form-check-label pl-2 pt-1">Vote</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
