@@ -7,11 +7,13 @@ import { NotifierModule } from 'angular-notifier';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RepresentantesComponent } from './components/representantes/representantes.component';
+import { ResultadosComponent } from './components/resultados/resultados.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RepresentantesComponent
+    RepresentantesComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,

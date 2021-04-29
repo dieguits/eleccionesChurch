@@ -1,0 +1,39 @@
+<div class="container pt-5 mt-5">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h4>Resultados Elecciones</h4>
+    </div>
+  </div>
+  <br>
+  <div class="row justify-content-center text-center">
+    <div *ngIf="!resultados" >
+        <h6>No podemos procesar los resultados.</h6>
+    </div>
+    <div *ngIf="resultados" class="col-sm-12">
+      <table class="table table-image">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Total Votos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let res of resultados">
+            <td>{{ res.firstname }}</td>
+            <td>{{ res.lastname }}</td>
+            <td class="w-10">
+              <img
+                src="../../../assets/{{ res.picture }}"
+                class="img-fluid img-thumbnail"
+                alt="Representante"
+              />
+            </td>
+            <td>{{ res.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

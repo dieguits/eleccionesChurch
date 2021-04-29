@@ -1,11 +1,11 @@
 <div class="container pt-5 mt-5">
   <notifier-container></notifier-container>
 
-  <div class="form-group row">
-    <label class="col-md-3 col-form-label text-right"
+  <div class="row form-group">
+    <label class="col-sm-3 col-md-3 col-form-label text-sm-left text-right"
       >Correo Electronico:
     </label>
-    <div class="col-md-6 text-left">
+    <div class="col-sm-9 col-md-6 text-left">
       <input
         type="email"
         class="form-control"
@@ -29,8 +29,8 @@
   </div>
   <br />
   <div class="row">
-    <div *ngFor="let repre of represenList" class="col-md-4 pb-4">
-      <div class="card pb-5" style="width: 18rem">
+    <div *ngFor="let repre of represenList" class="col-sm-12 col-md-4 pb-4">
+      <div class="card pb-5" >
         <img
           class="card-img-top"
           src="../../../assets/{{ repre.picture }}"
