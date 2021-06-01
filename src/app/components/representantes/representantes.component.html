@@ -1,6 +1,19 @@
 <div class="container pt-5 mt-5">
   <notifier-container></notifier-container>
 
+  <div class="row pb-4">
+    <div class="col-sm-12 text-center pb-3">
+      <h5>Pasos Para Registrar Votacion</h5>
+    </div>
+	<div class="col-sm-12 d-flex justify-content-center">		
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-primary">1. Ingresar Correo Electronico.</li>
+			<li class="list-group-item list-group-item-success">2. Seleccionar 3 Representantes.</li>
+			<li class="list-group-item list-group-item-warning">3. Oprimir Boton Enviar.</li>
+		  </ul>
+	</div>
+  </div>
+
   <div class="row form-group">
     <label class="col-sm-3 col-md-3 col-form-label text-sm-left text-right"
       >Correo Electronico:
@@ -21,7 +34,7 @@
       <input
         type="button"
         class="btn btn-primary"
-        value="Votar"
+        value="Enviar"
         [disabled]="canVote()"
         (click)="letsVote()"
       />
@@ -30,7 +43,7 @@
   <br />
   <div class="row">
     <div *ngFor="let repre of represenList" class="col-sm-12 col-md-4 pb-4">
-      <div class="card pb-5" >
+      <div class="card pb-5">
         <img
           class="card-img-top"
           src="../../../assets/{{ repre.picture }}"
